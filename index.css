@@ -1,0 +1,121 @@
+/* kudos to Tomomi Imura for http://girliemac.com/blog/2010/06/02/simulating-macos-dock-like-menu-with-css3/ */
+
+html {
+	height: 100%;
+	color: black;
+	background: white;
+}
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+	margin: 1em 1em 0;
+}
+
+img {
+	border: 0;
+}
+
+@font-face {
+    font-family: 'Handel-Gothic-BT';
+    src:url('fonts/Handel-Gothic-BT.ttf.woff') format('woff'),
+        url('fonts/Handel-Gothic-BT.ttf.svg#Handel-Gothic-BT') format('svg'),
+        url('fonts/Handel-Gothic-BT.ttf.eot'),
+        url('fonts/Handel-Gothic-BT.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+#dock-container {
+	padding-top: 32px;
+	text-align: center;
+	width: 100%;
+	height: 94px;
+	clear: both;
+	white-space: nowrap;
+}
+
+#dock {
+	position: relative;
+	display: inline-block;
+	perspective: 400;
+}
+
+#dock ul {
+	font-size: 14px;
+	padding: 0px;
+	margin: 0px;
+}
+
+#dock li {
+	list-style-type: none;
+	display: inline-block;
+	position: relative;		
+}
+
+#dock li span {
+	display: none;
+	position: absolute;
+	bottom: 140px;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,.75);
+	padding: 4px 0;
+	border-radius: 12px;
+}
+
+#dock li:hover span {
+	display: block;
+	color: white;
+}
+
+#dock li img {
+	width: 50px;
+	height: 50px;
+	margin-bottom: 26px;
+	-webkit-box-reflect: below 2px
+		-webkit-gradient(linear, left top, left bottom, from(transparent),
+		color-stop(0.7, transparent), to(rgba(255,255,255,.5)));
+	-webkit-box-reflect: below 2px -webkit-linear-gradient(top, transparent, rgba(255,255,255,.3));
+	transition: all 0.35s;
+	transform-origin: 50% 100%;
+}
+
+#dock li:hover img { 
+	transform: scale(2.4);
+	margin: 0 2em 10px;
+}
+
+/* one element after and element before (with JS)*/
+
+#dock li:hover + li img,
+#dock li.prev img {
+	transform: scale(1.4);
+	margin: 0 1.4em 10px;
+	margin-bottom: 21px;
+}
+
+#aboutme {
+	width: 800px;
+	margin: auto;
+	padding-top: 92px;
+}
+
+#aboutme img {
+	box-shadow: 2px 2px 7px grey;
+	float: left;
+	margin-right: 32px;
+	width: 195px;
+	height: 300px;
+}
+
+#aboutme h1 {
+	text-shadow: 2px 2px 5px grey;
+	font-size: 2em;
+	font-family: Handel-Gothic-BT, 'Droid Sans', Helvetica, arial, sans-serif;
+	margin-top: 0.5em;
+	margin-bottom: 0.7em;
+}
+
+#aboutme p {
+	text-align: justify;
+}
