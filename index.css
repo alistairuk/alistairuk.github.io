@@ -96,10 +96,19 @@ img {
 	padding-top: 92px;
 }
 
+#aboutme-left {
+	float: left;
+	width: 195px;
+	padding-top: 20px;
+}
+
+#aboutme-right {
+	float: right;
+	width: 573px;
+}
+
 #aboutme img {
 	box-shadow: 2px 2px 7px grey;
-	float: left;
-	margin-right: 32px;
 	width: 195px;
 	height: 300px;
 }
